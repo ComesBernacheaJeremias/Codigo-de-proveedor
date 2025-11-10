@@ -1,0 +1,25 @@
+<odoo>
+    <!-- Vista del producto principal -->
+    <record id="view_product_product_form_extended_main" model="ir.ui.view">
+        <field name="name">product.product.form.extended.main</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="after">
+                <field name="supplier_code"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Vista de la variante -->
+    <record id="view_product_variant_easy_edit_extended" model="ir.ui.view">
+        <field name="name">product.product.variant.easy.edit.extended</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="after">
+                <field name="supplier_code"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
